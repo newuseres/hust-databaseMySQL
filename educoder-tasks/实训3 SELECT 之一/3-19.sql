@@ -41,6 +41,6 @@ LEFT JOIN
     FROM property JOIN fund on pro_pif_id = f_id 
     WHERE pro_type = 3 and weekday(pro_purchase_time) = 4 and pro_purchase_time BETWEEN '2022-02-07' and '2022-02-28'
     GROUP BY pro_purchase_time
-) as fri USING(wk)
+) as fri USING(wk);
 
 /*  end  of  your code  */
