@@ -72,7 +72,7 @@ JOIN (
         GROUP BY pro_purchase_time
         HAVING sum(f_amount * pro_quantity) >= 1000000  
 ) as C
-WHERE A.nextday = B.pro_purchase_time and B.nextday = C.pro_purchase_time
+WHERE A.nextday = B.pro_purchase_time and B.nextday = C.pro_purchase_time;
 
 
 
