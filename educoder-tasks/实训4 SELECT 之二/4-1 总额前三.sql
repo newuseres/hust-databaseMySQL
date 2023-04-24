@@ -1,12 +1,8 @@
-SELECT YEAR(pro_income) as pyear,rank() over(PARTITION BY YEAR(pro_income) ORDER by p_amount DESC ) as rk
-from property
-WHERE pro_purchase_time BETWEEN '2010-1-1' and '2011-12-31';
-
 
 
 select  yo.year as pyear,yo.rk as rk , yo.p_id as p_id,yo.sumamount as sumamount
 from(
-SELECT YEAR(pro_purchase_time ) as year,p_id,sum(pro_quantity * p_amount ) as sumamount,rank() over(PARTITION BY YEAR(pro_purchase_time) ORDER by sum(pro_quantity * p_amount ) ) as rk
+SELECT YEAR(pro_purchase_time ) as year,p_id,sum(pro_quantity * p_amount ) as sumamount,rank() over(PARTITION BY YEAR(pro_purchase_time) ORDER by sum(pro_quantity * p_amount ) DESC,p_id ) as rk
 from property JOIN finances_product on p_id = pro_pif_id and pro_type = 1
 WHERE pro_purchase_time BETWEEN '2010-1-1' and '2011-12-31'
 GROUP BY YEAR(pro_purchase_time),p_id
