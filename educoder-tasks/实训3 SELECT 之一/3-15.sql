@@ -55,7 +55,7 @@ JOIN (
     SELECT sum(  pro_income ) as total_revenue , pro_c_id
     FROM property
     WHERE pro_type = 3 
-    GROUP BY pro_c_id    
+    GROUP BY pro_c_id
 ) as D 
 on C.total_revenue = D.total_revenue
 ORDER BY C.rk ASC,pro_c_id;
