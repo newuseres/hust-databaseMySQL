@@ -1,5 +1,5 @@
  请给出ER图文件存放的URL:
-https://github.com/newuseres/hust-databaseMySQL/blob/main/educoder-tasks/实训13%20数据库设计与实现/13.2.uml.png?raw=true
+https://github.com/newuseres/hust-databaseMySQL/blob/main/educoder-tasks/实训13%20数据库设计与实现/ersolution.jpg?raw=true
 
 以下给出关系模式：
 

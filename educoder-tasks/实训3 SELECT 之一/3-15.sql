@@ -4,7 +4,7 @@
 --     第二条SQL语句实现全局名次连续的排名。
 
 -- (1) 基金总收益排名(名次不连续)
-
+//dsaf 
 SELECT D.pro_c_id as pro_c_id,D.total_revenue as total_revenue,C.rk as 'rank'
 FROM (
     SELECT A.total_revenue as total_revenue ,COUNT(B.total_revenue)+1 as rk
