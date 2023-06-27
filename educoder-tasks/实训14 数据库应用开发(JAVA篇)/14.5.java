@@ -62,7 +62,6 @@ public class ChangePass {
             }
         }
         return n;
-
     }
 
     // 不要修改main() 

@@ -4,7 +4,7 @@
 --     第二条SQL语句实现全局名次连续的排名。
 
 -- (1) 基金总收益排名(名次不连续)
-//dsaf 
+
 SELECT D.pro_c_id as pro_c_id,D.total_revenue as total_revenue,C.rk as 'rank'
 FROM (
     SELECT A.total_revenue as total_revenue ,COUNT(B.total_revenue)+1 as rk
@@ -20,7 +20,7 @@ FROM (
         WHERE pro_type = 3 
         GROUP BY pro_c_id    
     ) as B on A.total_revenue < B.total_revenue 
-    GROUP BY A.total_revenue
+    GROUP BY A.total_revenue /*总收益左右表连接之后，按照左表为码，则右表的个数+1就是排名*/
 )
  as C 
 JOIN (
@@ -28,7 +28,7 @@ JOIN (
     FROM property
     WHERE pro_type = 3 
     GROUP BY pro_c_id    
-) as D 
+) as D /*与资产表连接之后就知道每一个对应基金投资总收益排名了 */
 on C.total_revenue = D.total_revenue
 ORDER BY C.rk ASC,pro_c_id;
 

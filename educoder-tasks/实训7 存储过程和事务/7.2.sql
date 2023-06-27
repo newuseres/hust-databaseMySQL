@@ -54,11 +54,7 @@ WHILE now_day <= end_date DO
     insert into night_shift_schedule  values(now_day,doctor,nurse1,nurse2);
     set now_day = date_add(now_day,INTERVAL 1 day);
 end while;
-
-
-
 end$$
-
 delimiter ;
 
 /*  end  of  your code  */ 
